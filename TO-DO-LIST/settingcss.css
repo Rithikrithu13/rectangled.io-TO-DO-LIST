@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #A18AFF;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background: #fff;
+    color: #343a40;
+    padding: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.profile-subtitle {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.menu h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #6c757d;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.menu ul li {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.menu ul li a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.menu ul li:hover {
+    text-decoration: underline;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.dot.personal { background: #ff6b6b; }
+.dot.freelance { background: #4dabf7; }
+.dot.work { background: #51cf66; }
+.dot.add-filter { background: #ffcc00; }
+
+/* Settings Panel */
+.settings-panel {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.settings-item {
+    margin-bottom: 20px;
+}
+
+.settings-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.settings-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.settings-item ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #6c757d;
+}
+
+.toggle {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    margin-left: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.toggle.enabled {
+    background: #4caf50;
+}
+
+.toggle::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+.toggle.enabled::before {
+    left: 20px;
+}

@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="profile picture.jpeg" alt="Profile Picture" class="profile-picture">
+        <h2 class="profile-name">Do-it</h2>
+        <p class="profile-subtitle">RITHIK K</p>
+      </div>
+      <nav class="menu">
+        <h3>Today’s Tasks</h3>
+        <ul>
+          <li><span class="dot personal"></span> Personal</li>
+          <li><span class="dot freelance"></span> Freelance</li>
+          <li><span class="dot work"></span> Work</li>
+        </ul>
+        <h3>Scheduled Tasks</h3>
+        <ul>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
+      <h1>Today’s Main Focus</h1>
+      <h2>Design Team Meeting</h2>
+      <div class="task-input">
+        <input type="text" id="task-input" placeholder="What is your next task?">
+        <button class="add-task-btn" onclick="addTask()">+</button>
+      </div>
+      <div class="task-list" id="task-list">
+        <div class="task personal">
+          <span>Work out</span>
+          <span>8:00 am</span>
+        </div>
+        <div class="task work">
+          <span>Design Team Meeting</span>
+          <span>2:30 pm</span>
+        </div>
+        <div class="task freelance">
+          <span>Hand off the project</span>
+          <span>7:00 pm</span>
+        </div>
+        <div class="task personal">
+          <span>Read 5 pages of "Sprint"</span>
+          <span>10:30 pm</span>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById('task-input');
+      const taskList = document.getElementById('task-list');
+      const taskText = taskInput.value.trim();
+
+      if (taskText !== '') {
+        const taskDiv = document.createElement('div');
+        taskDiv.className = 'task personal'; // Default category
+        taskDiv.innerHTML = `<span>${taskText}</span><span>Unscheduled</span>`;
+        taskList.appendChild(taskDiv);
+        taskInput.value = ''; // Clear input field
+      } else {
+        alert('Please enter a task!');
+      }
+    }
+  </script>
+</body>
+</html>
